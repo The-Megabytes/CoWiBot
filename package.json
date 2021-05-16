@@ -1,0 +1,22 @@
+{
+  "name": "cowibot",
+  "version": "1.0.0",
+  "description": "CoWiBot is a discord bot built using Node.js for getting upcoming COWIN appointments based on commands.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/The-Megabytes/CoWiBot.git"
+  },
+  "author": "The-Megabytes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/The-Megabytes/CoWiBot/issues"
+  },
+  "homepage": "https://github.com/The-Megabytes/CoWiBot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3"
+  }
+}

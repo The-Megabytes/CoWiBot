@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const Discord = require('discord.js');
 const axios = require('axios');
+const { set } = require('mongoose');
 const client = new Discord.Client();
 const prefix ='-';
 
@@ -22,7 +23,7 @@ var districtsKerala = [{ "district_id": 301, "district_name": "Alappuzha" },
                     { "district_id": 295, "district_name": "Kasaragod" },
                     { "district_id": 308, "district_name": "Palakkad" },
                     { "district_id": 300, "district_name": "Pathanamthitta" },
-                    { "district_id": 299, "district_name": "Wayanad" }]
+                    { "district_id": 299, "district_name": "Wayanad" }];
 
 
 client.on('message',message=>{
@@ -44,9 +45,9 @@ client.on('message',message=>{
 						.setColor('#00aad2')
 						.setTitle('Help')
 						.addFields(
+                            { name: '-help',value:'List All Commands'},
 							{ name: '-login', value: 'Hyperlink to official cowin website' },
 							{ name: '-ping', value: 'Check if bot is working' },
-							{ name: '-help',value:'List All Commands'},
                             { name: '-check',value:'Check for Available Vaccine slot'}
 						));
     }
@@ -55,7 +56,5 @@ client.on('message',message=>{
 
 
 })
-
-
 
 client.login(process.env.BOTTOKEN);

@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const Discord = require('discord.js');
-
+const axios = require('axios');
 const client = new Discord.Client();
 const prefix ='-';
 
@@ -38,7 +38,7 @@ client.on('message',message=>{
         message.channel.send('pong!');
 
     }else if(command == 'login'){
-        message.channel.send('https://selfregistration.cowin.gov.in/')
+        message.channel.send('Click link below to login & register \n https://selfregistration.cowin.gov.in/')
     }else if (command == 'help'){
         message.channel.send(new Discord.MessageEmbed()
 						.setColor('#00aad2')

@@ -22,7 +22,7 @@ module.exports={
                 value: 'Check if bot is working' },
             {
                 name: '-register',
-                value: 'Display list of districts with dostrict' 
+                value: 'Display list of districts with district codes to choose from' 
             }
             
         ));

@@ -52,6 +52,13 @@ client.on('message',message=>{
     const args =message.content.slice(prefix.length).split(/ +/);
     const command=args.shift().toLowerCase();
 
+    
+    // try {
+	// 	client.commands.get(command).execute(message, args);
+	// } catch (error) {
+	// 	console.error(error);
+	// 	message.reply('there was an error trying to execute that command!');
+	// }
 
     if(command === 'ping'){
 
@@ -65,10 +72,17 @@ client.on('message',message=>{
 
         client.commands.get('help').execute(message,args);
     }
+    else if (command == 'register'){
+
+        client.commands.get('register').execute(message,args);
+    }
 
 
 
 
-})
+
+
+
+});
 
 client.login(process.env.BOTTOKEN);

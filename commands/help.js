@@ -10,9 +10,21 @@ module.exports={
         .setFooter("Stay home , Stay Safe !")
 
         .addFields(
-            { name: '-help',value:'List All Commands'},
-            { name: '-link', value: 'Link to official CoWin website' },
-            { name: '-ping', value: 'Check if bot is working' },
+            {   
+                name: '-help',
+                value:'List All Commands'
+            },
+            { 
+                name: '-link',
+                value: 'Link to official CoWin website' },
+            { 
+                name: '-ping',
+                value: 'Check if bot is working' },
+            {
+                name: '-register',
+                value: 'Display list of districts with dostrict' 
+            }
+            
         ));
     }
 }

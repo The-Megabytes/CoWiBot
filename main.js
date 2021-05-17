@@ -46,7 +46,7 @@ client.on('message',message=>{
 						.addFields(
 							{ name: '-login', value: 'Hyperlink to official cowin website' },
 							{ name: '-ping', value: 'Check if bot is working' },
-							{ name: '-help',value:'List All Commands'}
+							{ name: '-help',value:'List All Commands'},
                             { name: '-check',value:'Check for Available Vaccine slot'}
 						));
     }

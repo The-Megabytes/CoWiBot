@@ -6,6 +6,17 @@ const { set } = require('mongoose');
 const client = new Discord.Client();
 const prefix ='-';
 
+//fs for acessing other js files
+const fs = require('fs');
+
+//discord collection of all commands
+client.commands = new Discord.Collection();
+
+
+const commandFiles
+
+
+
 client.once('ready',()=>{
     console.log('CoWIBot Is Online !');
 })

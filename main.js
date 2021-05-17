@@ -12,9 +12,16 @@ const fs = require('fs');
 //discord collection of all commands
 client.commands = new Discord.Collection();
 
+//make sure that we're reading js files
+const commandFiles = fs.readdirSync('./commands/').filter(file =>file.endsWith('.js'));
 
-const commandFiles
+//loop tofind correct command to execute
+for(const file of commandFiles){
 
+    const command = require(`./commands/${file}`);
+
+    client.commands.set(command.name, command)
+}
 
 
 client.once('ready',()=>{
@@ -47,20 +54,16 @@ client.on('message',message=>{
 
 
     if(command === 'ping'){
-        message.channel.send('pong!');
 
-    }else if(command == 'login'){
-        message.channel.send('Click link below to login & register \n https://selfregistration.cowin.gov.in/')
+        client.commands.get('ping').execute(message, args);
+
+    }else if(command == 'link'){
+
+        client.commands.get('link').execute(message,args);
+
     }else if (command == 'help'){
-        message.channel.send(new Discord.MessageEmbed()
-						.setColor('#00aad2')
-						.setTitle('Help')
-						.addFields(
-                            { name: '-help',value:'List All Commands'},
-							{ name: '-login', value: 'Hyperlink to official cowin website' },
-							{ name: '-ping', value: 'Check if bot is working' },
-                            { name: '-check',value:'Check for Available Vaccine slot'}
-						));
+
+        client.commands.get('help').execute(message,args);
     }
 
 

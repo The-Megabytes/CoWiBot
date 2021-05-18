@@ -23,16 +23,16 @@ module.exports={
                 value: 'Check if bot is working' 
             },
             {
-                name: '-register',
-                value: 'Display list of districts with district codes to choose from' 
-            },
-            {
                 name: '-states',
-                value: 'Display list of states to choose from. Inorder to select a state and list the districts use :\n\` !district <state id> \`' 
+                value: 'Display list of states to choose from. Inorder to select a state and list the districts use :\n\` -district <state id> \`\n' 
             },
             { 
-                name: '-district',
-                value: 'Displays link of districts in the state selected .' 
+                name: '-district <state id>',
+                value: 'Displays link of districts in the state selected .In order to select a district use: \n\` -register <district id> \`\n ' 
+            },
+            {
+                name: '-register <district id>',
+                value: 'Displays whether vaccine slots are available, If available link to vaccine portal is given' 
             },
 
         

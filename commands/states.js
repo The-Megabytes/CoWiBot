@@ -43,13 +43,13 @@ module.exports = {
                 for (let i = 0; i < states.length; i++) {
                     embed.addField(
                         `${states[i].state_id}  ${states[i].state_name}`,
-                        `for selecting this state type next command as : !district ${states[i].state_id}  `
+                        `for selecting this state type next command as : -district ${states[i].state_id}  `
                     );
                 }
 
                 message.channel.send({ embed });
                 message.channel.send(
-                    `Inorder to select a state and list the districts us :\` !district <state id> \``
+                    `Inorder to select a state and list the districts use :\` -district <state id> \``
                 );
             })
             .catch(function (error) {

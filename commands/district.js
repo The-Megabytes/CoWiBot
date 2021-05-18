@@ -41,7 +41,7 @@ module.exports = {
                 for (let i = 0; i < districts.length; i++) {
                     embed.addField(
                         `${districts[i].district_id}  ${districts[i].district_name}`,
-                        `for selecting this state type next command as : -register ${districts[i].district_id}  `
+                        `for selecting this district type next command as : -register ${districts[i].district_id}  `
                     );
                 }
                 message.channel.send({ embed });

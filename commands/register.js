@@ -34,7 +34,7 @@ for(let elements of iterator){
 module.exports={
     name:'register',
     description:'Lorem Ipsum',
-
+    arg: true,
     execute(message,args){
         message.channel.send(new Discord.MessageEmbed()
         .setTitle("Send your District ID")

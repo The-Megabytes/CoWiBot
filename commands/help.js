@@ -16,14 +16,26 @@ module.exports={
             },
             { 
                 name: '-link',
-                value: 'Link to official CoWin website' },
+                value: 'Link to official CoWin website' 
+            },
             { 
                 name: '-ping',
-                value: 'Check if bot is working' },
+                value: 'Check if bot is working' 
+            },
             {
                 name: '-register',
                 value: 'Display list of districts with district codes to choose from' 
-            }
+            },
+            {
+                name: '-states',
+                value: 'Display list of states to choose from. Inorder to select a state and list the districts use :\n\` !district <state id> \`' 
+            },
+            { 
+                name: '-district',
+                value: 'Displays link of districts in the state selected .' 
+            },
+
+        
             
         ));
     }

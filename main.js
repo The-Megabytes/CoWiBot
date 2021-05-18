@@ -30,48 +30,6 @@ client.once('ready',()=>{
 
 
 
-// client.on('message',message=>{
-//     //checks if the message not contain prefix or author is bot, condition true =>no action done
-//     if (!message.content.startsWith(prefix) || message.author.bot) return;
-    
-//     //slices the command
-//     const args =message.content.slice(prefix.length).split(/ +/);
-//     const command=args.shift().toLowerCase();
-
-    
-//     // try {
-// 	// 	client.commands.get(command).execute(message, args);
-// 	// } catch (error) {
-// 	// 	console.error(error);
-// 	// 	message.reply('there was an error trying to execute that command!');
-// 	// }
-
-//     if(command === 'ping'){
-
-//         client.commands.get('ping').execute(message, args);
-
-//     }else if(command == 'link'){
-
-//         client.commands.get('link').execute(message,args);
-
-//     }else if (command == 'help'){
-
-//         client.commands.get('help').execute(message,args);
-//     }
-//     else if (command == 'register'){
-
-//         client.commands.get('register').execute(message,args);
-//     }
-
-
-
-
-
-
-
-// });
-
-
 client.on("message", (message) => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
@@ -98,6 +56,8 @@ client.on("message", (message) => {
         console.error(error);
         message.reply("there was an error trying to execute that command!");
     }
+
+    
 });
 
 client.login(process.env.BOTTOKEN);

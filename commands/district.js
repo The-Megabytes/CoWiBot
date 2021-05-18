@@ -1,5 +1,5 @@
 const axios = require("axios");
-const { link, prefix } = require("../config.json");
+const link = "https://selfregistration.cowin.gov.in/";
 const Discord = require("discord.js");
 
 var options = {

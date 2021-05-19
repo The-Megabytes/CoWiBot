@@ -1,7 +1,6 @@
 require('dotenv').config();
 
 const Discord = require('discord.js');
-const axios = require('axios');
 const { set } = require('mongoose');
 const client = new Discord.Client();
 const prefix ='-';

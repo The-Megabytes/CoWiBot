@@ -63,10 +63,7 @@ module.exports = {
                 for (let i = 0; i < sessions.length; i++) {
                     embed.addField(
                         `${sessions[i].name}`,
-                        `Available capacity : ${sessions[i].available_capacity} 
-                         Minimum Age Limit : ${sessions[i].min_age_limit} 
-                         Vaccine : ${sessions[i].vaccine}
-                         Slots : ${sessions[i].slots}`
+                        `Available capacity : ${sessions[i].available_capacity}\nMinimum Age Limit : ${sessions[i].min_age_limit}\nVaccine : ${sessions[i].vaccine}\nSlots : ${sessions[i].slots}`
                     );
                 }
                 message.channel.send({ embed });

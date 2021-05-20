@@ -1,9 +1,10 @@
 require('dotenv').config();
 
 const Discord = require('discord.js');
-const { set } = require('mongoose');
+const mongoose = require('mongoose');
 const client = new Discord.Client();
 const prefix ='-';
+//CowibotDB
 
 //fs for acessing other js files
 const fs = require('fs');
@@ -57,6 +58,16 @@ client.on("message", (message) => {
     }
 
     
+});
+
+mongoose.connect(process.env.MONGODB_SRV,{
+    useNewUrlParser:true,
+    useUnifiedTopology:true,
+    useFindAndModify:false
+}).then(()=>{
+    console.log('Connected to Database !!');
+}).catch((err)=>{
+    console.log(err)
 });
 
 client.login(process.env.BOTTOKEN);

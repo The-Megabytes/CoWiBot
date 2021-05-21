@@ -54,19 +54,29 @@ module.exports = {
                         "Currently sessions are not available in your district"
                     );
                 }
-                //for creating an embeded message
-                const embed = new Discord.MessageEmbed();
-                embed.setTitle(`Available Sessions`);
-                embed.setDescription(
-                    `A list of sessions available in your district`
-                );
-                for (let i = 0; i < sessions.length; i++) {
-                    embed.addField(
-                        `${sessions[i].name}`,
-                        `Available capacity : ${sessions[i].available_capacity}\nMinimum Age Limit : ${sessions[i].min_age_limit}\nVaccine : ${sessions[i].vaccine}\nSlots : ${sessions[i].slots}`
+
+                //creting a chunk of size 25
+                chunk = 25;
+                noofSlots = available / chunk;
+
+                for (let i = 0; i < noofSlots; i++) {
+                    Slots = sessions.splice(0, chunk);
+
+                    //for creating an embeded message
+                    const embed = new Discord.MessageEmbed();
+                    embed.setTitle(`Available Sessions`);
+                    embed.setDescription(
+                        `A list of sessions available in your district`
                     );
+                    for (let i = 0; i < Slots.length; i++) {
+                        embed.addField(
+                            `${Slots[i].name}`,
+                            `Available capacity : ${Slots[i].available_capacity}\nMinimum Age Limit : ${Slots[i].min_age_limit}\nVaccine : ${Slots[i].vaccine}\nSlots : ${Slots[i].slots}`
+                        );
+                    }
+                    message.channel.send({ embed });
                 }
-                message.channel.send({ embed });
+
                 message.channel.send(`Register for the session here: ${link}`);
             })
             .catch(function (error) {

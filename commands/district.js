@@ -19,32 +19,41 @@ module.exports = {
     execute(message, args) {
         axios
             .get(
-                `https://cdn-api.co-vin.in/api/v2/admin/location/districts/${args[0]}`,
-                options
+                `https://cowin.rabeeh.me/api/v2/admin/location/districts/${args[0]}`
             )
             .then(function (response) {
                 // handle success
-                //console.log(response.data);
-                const data = response.data;
+                //we are parsing the received json data
+                const receiveddata = response.data;
+                const data = receiveddata.data;
                 const districts = data.districts;
-                const available = districts.length;
-                console.log("Available districts " + districts.length);
-                if (available === 0) {
-                    return message.channel.send(
-                        "Currently sessions are not available in your district"
-                    );
+                const districtCount = districts.length;
+                console.log("Available districts " + districtCount);
+                if (districtCount === 0) {
+                    return message.channel.send("Enter a valid state id");
                 }
-                //creating embeded message
-                const embed = new Discord.MessageEmbed();
-                embed.setTitle(`District List`);
-                embed.setDescription(`A list of districts with their id's`);
-                for (let i = 0; i < districts.length; i++) {
-                    embed.addField(
-                        `${districts[i].district_id}  ${districts[i].district_name}`,
-                        `for selecting this district type next command as : -register ${districts[i].district_id}  `
-                    );
+
+                //creating chunk of size 25
+                chunk = 25; //maximum number of values in a embedded message
+                totalChunk = districtCount / chunk; //breaking down the total no of districts into chunks of 25 districts
+
+                for (let i = 0; i < totalChunk; i++) {
+                    districtState = districts.splice(0, chunk); //selecting sets of 25 states
+
+                    //creating embeded message
+                    const embed = new Discord.MessageEmbed();
+                    embed.setTitle(`District List`);
+                    embed.setDescription(`A list of districts with their id's`);
+                    for (let i = 0; i < districtState.length; i++) {
+                        embed.addField(
+                            `${districtState[i].district_id}  ${districtState[i].district_name}`,
+                            `for selecting this state type next command as : -register ${districtState[i].district_id}  `
+                        );
+                    }
+                    //sending the embeded message
+                    message.channel.send(embed);
                 }
-                message.channel.send({ embed });
+
                 message.channel.send(
                     `Register for a district by the command : \` -register <district id> \``
                 );

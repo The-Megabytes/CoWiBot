@@ -50,7 +50,7 @@ module.exports = {
 
                 //for creating the  embeded message
                 const secondembed = new Discord.MessageEmbed();
-                half = Math.round(available / 2);
+                const half = Math.round(available / 2);
                 for (let i = half; i < available; i++) {
                     secondembed.addField(
                         `${states[i].state_id}  ${states[i].state_name}`,
@@ -63,7 +63,7 @@ module.exports = {
                 console.log("Succesfully sent the second embed");
 
                 message.channel.send(
-                    `Inorder to select a state and list the districts us :\` !district <state id> \``
+                    `Inorder to select a state and list the districts us :\` -district <state id> \``
                 );
             })
             .catch(function (error) {

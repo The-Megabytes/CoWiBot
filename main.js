@@ -60,14 +60,14 @@ client.on("message", (message) => {
     
 });
 
-mongoose.connect(process.env.MONGODB_SRV,{
-    useNewUrlParser:true,
-    useUnifiedTopology:true,
-    useFindAndModify:false
-}).then(()=>{
-    console.log('Connected to Database !!');
-}).catch((err)=>{
-    console.log(err)
-});
+// mongoose.connect(process.env.MONGODB_SRV,{
+//     useNewUrlParser:true,
+//     useUnifiedTopology:true,
+//     useFindAndModify:false
+// }).then(()=>{
+//     console.log('Connected to Database !!');
+// }).catch((err)=>{
+//     console.log(err)
+// });
 
 client.login(process.env.BOTTOKEN);

@@ -19,14 +19,12 @@ module.exports = {
     execute(message, args) {
         //for getting the list of states from the api
         axios
-            .get(
-                `https://cdn-api.co-vin.in/api/v2/admin/location/states`,
-                options
-            )
+            .get(`https://cowin.rabeeh.me/api/v2/admin/location/states`)
             .then(function (response) {
                 // handle success
                 //console.log(response.data);
-                const data = response.data;
+                const receiveddata = response.data;
+                const data = receiveddata.data;
                 const states = data.states;
                 const available = states.length;
                 console.log("Available states " + states.length);
@@ -40,16 +38,32 @@ module.exports = {
                 const embed = new Discord.MessageEmbed();
                 embed.setTitle(`State List`);
                 embed.setDescription(`A list of states with their id's`);
-                for (let i = 0; i < states.length; i++) {
+                for (let i = 0; i < available / 2; i++) {
                     embed.addField(
                         `${states[i].state_id}  ${states[i].state_name}`,
-                        `for selecting this state type next command as : -district ${states[i].state_id}  `
+                        `for selecting this state type next command as : !district ${states[i].state_id}  `
                     );
                 }
 
-                message.channel.send({ embed });
+                message.channel.send(embed);
+                console.log("Succesfully send the first embed");
+
+                //for creating the  embeded message
+                const secondembed = new Discord.MessageEmbed();
+                half = Math.round(available / 2);
+                for (let i = half; i < available; i++) {
+                    secondembed.addField(
+                        `${states[i].state_id}  ${states[i].state_name}`,
+                        `for selecting this state type next command as : !district ${states[i].state_id}  `
+                    );
+                }
+
+                message.channel.send(secondembed);
+
+                console.log("Succesfully sent the second embed");
+
                 message.channel.send(
-                    `Inorder to select a state and list the districts use :\` -district <state id> \``
+                    `Inorder to select a state and list the districts us :\` !district <state id> \``
                 );
             })
             .catch(function (error) {

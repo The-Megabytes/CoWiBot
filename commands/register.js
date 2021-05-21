@@ -34,6 +34,9 @@ module.exports = {
     arg: true,
     usage: "<district id>",
     execute(message, args) {
+        if(!(args[0]>=1 && args[0]<=737) ){
+            return message.channel.send('Error ! Please Enter Proper District ID');
+        }
         //calling api via axios
         axios
             .get(
@@ -48,12 +51,14 @@ module.exports = {
                 const available = sessions.length;
                 console.log("Available sessions " + sessions.length);
 
+                
                 //checks if the sessions are availabe
                 if (available === 0) {
                     return message.channel.send(
                         "Currently sessions are not available in your district"
                     );
                 }
+                
 
                 //creting a chunk of size 25
                 chunk = 25;

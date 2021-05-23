@@ -52,6 +52,8 @@ module.exports = {
                 const data = response.data;
                 const sessions = data.sessions;
                 const available = sessions.length;
+
+                const avilability = data.sessions[0].available_capacity;
                 console.log("Available sessions " + sessions.length);
 
                 
@@ -61,7 +63,21 @@ module.exports = {
                         "Currently sessions are not available in your district"
                     );
                 }
-                
+                var count =0;
+
+                for(let i=0;i<sessions.length ;i++){
+                    if(data.sessions[i].available_capacity != 0){
+                        count++;
+                    }
+
+                }
+                console.log("Count "+count);
+
+                if(count==0){
+                    return message.channel.send(
+                        "Currently sessions are not available in your district"
+                    );
+                }
 
                 //creting a chunk of size 25
                 chunk = 25;
@@ -76,14 +92,21 @@ module.exports = {
                     embed.setDescription(
                         `A list of sessions available in your district`
                     );
+                    
                     for (let i = 0; i < Slots.length; i++) {
-                        embed.addField(
-                            `${Slots[i].name}`,
-                            `Available capacity : ${Slots[i].available_capacity}\nMinimum Age Limit : ${Slots[i].min_age_limit}\nVaccine : ${Slots[i].vaccine}\nSlots : ${Slots[i].slots}`
-                        );
+                        if(Slots[i].available_capacity != 0){
+                            
+                            embed.addField(
+                                `${Slots[i].name}`,
+                                `Available capacity : ${Slots[i].available_capacity}\nMinimum Age Limit : ${Slots[i].min_age_limit}\nVaccine : ${Slots[i].vaccine}\nSlots : ${Slots[i].slots}`
+                            );
+                        }
+                        
                     }
+                   
                     message.channel.send({ embed });
                 }
+                
 
                 message.channel.send(`Register for the session here: ${link}`);
             })

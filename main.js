@@ -4,18 +4,6 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix ='-';
 
-const mongoose = require('mongoose');
-
-mongoose.connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex:true,
-    useFindAndModify:false,
-})
-.then((m)=>{
-    console.log("Connected to Database");
-})
-.catch((err) => console.log(err));
 
 //fs for acessing other js files
 const fs = require('fs');

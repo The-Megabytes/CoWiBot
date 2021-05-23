@@ -1,6 +1,5 @@
 const axios = require("axios");
 const link = "https://selfregistration.cowin.gov.in/";
-//import { createUser,updateUserData,readUserData, deleteUserData } from "../mongoCRUD";
 
 const Discord = require("discord.js");
 

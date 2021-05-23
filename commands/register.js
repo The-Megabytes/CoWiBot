@@ -1,5 +1,6 @@
 const axios = require("axios");
 const link = "https://selfregistration.cowin.gov.in/";
+//import { createUser,updateUserData,readUserData, deleteUserData } from "../mongoCRUD";
 
 const Discord = require("discord.js");
 
@@ -34,6 +35,8 @@ module.exports = {
     arg: true,
     usage: "<district id>",
     execute(message, args) {
+        //console.log(typeof(args[0]));
+
         if(!(args[0]>=1 && args[0]<=737) ){
             return message.channel.send('Error ! Please Enter Proper District ID');
         }

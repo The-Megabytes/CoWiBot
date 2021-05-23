@@ -49,12 +49,12 @@ module.exports = {
             const data = response.data;
             const sessions = data.sessions;
             const available = sessions.length;
-
+            
             if (available === 0) {
                 message.channel.send(
                     `Currently sessions are not available in your district ${args[0]} ${message.author}`
                 );
-                message.channel.send("plz come back after 1 hour ,if sessions available we will inform you");
+                //message.channel.send("plz come back after 1 hour ,if sessions available we will inform you");
             }
 
                 var count =0;
@@ -136,7 +136,7 @@ module.exports = {
                 message.channel.send(
                     `Currently sessions are not available in your district ${args[0]} ${message.author}`
                 );
-                message.channel.send("plz come back after 1 hour ,if sessions available we will inform you");
+                //message.channel.send("plz come back after 1 hour ,if sessions available we will inform you");
             }
 
                 var count =0;
@@ -150,7 +150,7 @@ module.exports = {
                 
                 if(count==0){
                     return message.channel.send(
-                        `Currently sessions are not available in your district ${args[0]} ${message.author} \nWe will notify with hourly updates whether session is available or not`
+                        `Sessions not available in your district ${args[0]} ${message.author} \nWe will notify with hourly updates whether session is available or not`
                     );
                 }
             

@@ -3,9 +3,9 @@
 ![CowiBot Banner](https://www.linkpicture.com/q/CoWiBot.png)
 [Click Here To Add Bot To Your Server](https://discord.com/api/oauth2/authorize?client_id=843349115609415701&permissions=2148005952&scope=bot)
 ## Team members
-**1.** [*Aromal S*](https://github.com/aromalsanthosh)
-**2.** [*Noel Jose TP*](https://github.com/noel-jose)
-**3.** [*Akhil S Unni*](https://github.com/AKHILSUNNI)
+**1.** [*Aromal S*](https://github.com/aromalsanthosh)<br>
+**2.** [*Noel Jose TP*](https://github.com/noel-jose)<br>
+**3.** [*Akhil S Unni*](https://github.com/AKHILSUNNI)<br>
 ## Team Id
 ***BFH/reci7s2lmmQkZbNS8/2021***
 ## Requirements

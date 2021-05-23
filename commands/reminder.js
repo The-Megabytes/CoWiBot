@@ -50,12 +50,12 @@ module.exports = {
             const sessions = data.sessions;
             const available = sessions.length;
             
-            if (available === 0) {
-                message.channel.send(
-                    `Currently sessions are not available in your district ${args[0]} ${message.author}`
-                );
-                //message.channel.send("plz come back after 1 hour ,if sessions available we will inform you");
-            }
+            // if (available === 0) {
+            //     message.channel.send(
+            //         `Currently sessions are not available in your district ${args[0]} ${message.author}`
+            //     );
+            //     //message.channel.send("plz come back after 1 hour ,if sessions available we will inform you");
+            // }
 
                 var count =0;
                 for(let i=0;i<sessions.length ;i++){
@@ -66,7 +66,7 @@ module.exports = {
                 }
                 console.log("Count "+count);
                 
-                if(count==0){
+                if(count==0 || available ===0){
                     return message.channel.send(
                         `Currently sessions are not available in your district ${args[0]} ${message.author} \nWe will notify with hourly updates whether session is available or not`
                     );
@@ -132,12 +132,12 @@ module.exports = {
             const sessions = data.sessions;
             const available = sessions.length;
 
-            if (available === 0) {
-                message.channel.send(
-                    `Currently sessions are not available in your district ${args[0]} ${message.author}`
-                );
-                //message.channel.send("plz come back after 1 hour ,if sessions available we will inform you");
-            }
+            // if (available === 0) {
+            //     message.channel.send(
+            //         `Currently sessions are not available in your district ${args[0]} ${message.author}`
+            //     );
+            //     //message.channel.send("plz come back after 1 hour ,if sessions available we will inform you");
+            // }
 
                 var count =0;
                 for(let i=0;i<sessions.length ;i++){
@@ -148,7 +148,7 @@ module.exports = {
                 }
                 console.log("Count "+count);
                 
-                if(count==0){
+                if(count==0 || available ==0){
                     return message.channel.send(
                         `Sessions not available in your district ${args[0]} ${message.author} \nWe will notify with hourly updates whether session is available or not`
                     );
@@ -196,7 +196,7 @@ module.exports = {
             // always executed
         });
 
-        },15000)
+        },3600000)
 
     }//end of execute
 };//end of module.export

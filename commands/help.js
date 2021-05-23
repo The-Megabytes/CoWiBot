@@ -35,6 +35,11 @@ module.exports={
                 value: 'Displays whether vaccine slots are available, If available link to vaccine portal is given' 
             },
 
+            {
+                name: '-reminder <district id>',
+                value: 'Initially checks if slots are available, If not available, the bot notifies you at hourly intervals until a slot is available' 
+            }
+
         
             
         ));

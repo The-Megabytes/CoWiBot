@@ -52,7 +52,7 @@ module.exports = {
                 const sessions = data.sessions;
                 const available = sessions.length;
 
-                const avilability = data.sessions[0].available_capacity;
+                
                 console.log("Available sessions " + sessions.length);
 
                 
@@ -62,8 +62,8 @@ module.exports = {
                         "Currently sessions are not available in your district"
                     );
                 }
-                var count =0;
 
+                var count =0;
                 for(let i=0;i<sessions.length ;i++){
                     if(data.sessions[i].available_capacity != 0){
                         count++;
@@ -87,6 +87,7 @@ module.exports = {
 
                     //for creating an embeded message
                     const embed = new Discord.MessageEmbed();
+                    embed.setColor("#ba0013");
                     embed.setTitle(`Available Sessions`);
                     embed.setDescription(
                         `A list of sessions available in your district`
@@ -118,4 +119,4 @@ module.exports = {
                 // always executed
             });
     },
-};
+}; //end of module.exports

@@ -33,7 +33,20 @@ This bot has many many commands. Here are a few highlights:
 - `-district <state id>` -> Displays link of districts in the state selected .In order to select a district **use**: `-register <district id>`
 - `-register <district id` => Displays whether vaccine slots are available, If available link to vaccine portal is given
 - `-reminder <district id>` -> Initially checks if slots are available, If not available, the bot notifies you at hourly intervals until a slot is available
+## Screenshots
 
+<div float="left">
+    <img src="images/web_1.png"  width="200" height="345">
+    <img src="images/web_2.png" width="200" height="345">
+    <img src="images/web_3.png" width="200" height="345">
+    <img src="images/web_4.png" width="200" height="345">
+</div>
+
+<div float="left">
+    <img src="images/web_5.png"  width="200" height="345">
+    <img src="images/web_6.png" width="200" height="345">
+    <img src="images/web_7.png" width="200" height="345">
+</div>
 
 ## How it Works ?
  -Working of project [Youtube Video Click Here](https://youtu.be/z8hMozfA5QU)

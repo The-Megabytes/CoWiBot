@@ -48,8 +48,7 @@ This bot has many many commands. Here are a few highlights:
     <img src="images/web_7.png" width="200" height="345">
 </div>
 
-## How it Works ?
- -Working of project [Youtube Video Click Here](https://youtu.be/z8hMozfA5QU)
+
 
 ## Libraries used
 

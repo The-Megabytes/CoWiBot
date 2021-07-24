@@ -1,5 +1,6 @@
 ![BFH Banner](https://trello-attachments.s3.amazonaws.com/542e9c6316504d5797afbfb9/542e9c6316504d5797afbfc1/39dee8d993841943b5723510ce663233/Frame_19.png)
 # [CoWibot](https://discord.com/api/oauth2/authorize?client_id=843349115609415701&permissions=2148005952&scope=bot) 
+### The Bot Is Currently Shut Down, You can use it by hosting on local or cloud server
 ![CowiBot Banner](https://www.linkpicture.com/q/CoWiBot.png)
 [Click Here To Add Bot To Your Server](https://discord.com/api/oauth2/authorize?client_id=843349115609415701&permissions=2148005952&scope=bot)
 ## Team members
